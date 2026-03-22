@@ -1,0 +1,5 @@
+Loan Report
+Customer: Sathwika
+Loan Amount: 10000
+Monthly Payment: 1500
+Months to repay: 7
