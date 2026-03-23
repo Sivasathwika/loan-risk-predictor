@@ -30,6 +30,11 @@ def loan_risk_score(credit_score,income,loan_amount):
     else:
         print("High Risk")
     
+def monthly_emi(loan_amount,interest_rate,years):
+    monthly_rate=interest_rate/(12*100)
+    months=years*12
+    EMI=(loan_amount*monthly_rate*(1+monthly_rate)**months)/((1+monthly_rate)**months-1)
+    print("Monthly EMI:",round(EMI,2))
 
 def main():
     customer_name=input("Enter your name:")
@@ -38,8 +43,10 @@ def main():
     loan_amount=int(input("Enter loan amount:"))
     interest_rate=int(input("Enter interest rate:"))
     credit_score=int(input("Enter credit score:"))
+    years=int(input("Enter loan tenure in years:"))
     loan_summary(customer_name,loan_amount,interest_rate)
     check_eligibility(age,income)
     loan_risk_score(credit_score,income,loan_amount)
+    monthly_emi(loan_amount,interest_rate,years)
 
 main()
